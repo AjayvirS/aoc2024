@@ -16,6 +16,14 @@ day02/
 
 ## Usage
 
+### Creating a new day
+Use the setup script to create a new day's directory structure:
+```bash
+./setup_day.sh <day_number>
+# Example: ./setup_day.sh 3
+```
+
+### Running a solution
 Navigate to a specific day's directory and run the solution:
 ```bash
 cd day01
