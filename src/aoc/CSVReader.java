@@ -24,4 +24,24 @@ public class CSVReader {
         return values;
     }
 
+    public TwoDimensionalList<Integer> readCSVAsMatix(String filePath, String delimiter) {
+
+        String line;
+        ArrayList<int[]> rows = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            while ((line = br.readLine()) != null) {
+                String[] stringValues = line.split(delimiter);
+                int[] intValues = new int[stringValues.length];
+                for (int i = 0; i < stringValues.length; i++) {
+                    intValues[i] = Integer.parseInt(stringValues[i]);
+                }
+                rows.add(intValues);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new TwoDimensionalList<>(rows);
+    }
+
 }

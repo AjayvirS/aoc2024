@@ -19,7 +19,6 @@ public class Historian_Hysteria {
         for(int elem: sorted_first){
             total_distance+=(Math.abs(elem-sorted_second.get(i)));
             i++;
-
         }
 
         System.out.println(total_distance);
